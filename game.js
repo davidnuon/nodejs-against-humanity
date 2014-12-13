@@ -67,7 +67,7 @@ function joinGame(game, player) {
 
     game.players.push(joiningPlayer);
 
-    if(game.players.length === 4) {
+    if(game.players.length === game.playerCount) {
         if(!game.isStarted){
             startGame(game);
         } else {

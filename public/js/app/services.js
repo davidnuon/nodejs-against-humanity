@@ -17,6 +17,7 @@ angular.module('myApp.services', [])
 
         return {
             playerName: '',
+            playerCount: 5,
             playerId : pId,
             newGameId : guid(),
             currentGameId: undefined,
