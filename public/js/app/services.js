@@ -7,6 +7,14 @@
 // In this case it is a simple value service.
 angular.module('myApp.services', [])
   .factory('GameService', function($http) {
+        var placeHolderName = function() {
+            var adj = ['aboriginal','equable','terrible','terrific','massive','grandiose','industrious','homeless','rustic','fluffy','ambitious','violet','jazzy','endurable','complete','nostalgic','stupid','jolly','accessible','filthy','purring','super','jaded','kindly','racial','nimble','rabid','knowing','dark','nauseating','divergent','black-and-white','barbarous','pointless','quickest']
+            var noun = ['rainstorm','cannon','spoon','visitor','chalk','jeans','whip','produce','cook','brick','skirt','stomach','fold','eggs','boy','office','aunt','destruction','reward','push','business','chess','increase','pipe','field','drop','fire','animal','moon','channel','discussion','bee','spade','tax','basketball'];
+            var idxA = Math.floor(Math.random() * adj.length);
+            var idxN = Math.floor(Math.random() * noun.length);
+            return adj[idxA] + (noun[idxN].charAt(0).toUpperCase() + noun[idxN].slice(1));
+        };
+
         var s4 = function() {
             return Math.floor(Math.random() * 0x10000).toString();
         }
@@ -22,7 +30,7 @@ angular.module('myApp.services', [])
             currentGameId: undefined,
             initName: function() {
                 if(this.playerName.length === 0) {
-                    this.playerName = 'anonymous ' + s4();
+                    this.playerName = placeHolderName() + ' ' + s4();
                 }
             },
             getGames: function() {
