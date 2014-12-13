@@ -123,25 +123,15 @@ function roundEnded(game) {
     player.selectedWhiteCardId = null;
   });
 
-  if(game.players[0].isCzar === true) {
-    game.players[0].isCzar = false;
-    game.players[1].isCzar = true;
-    game.players[1].isReady = false;
-  }
-  else if(game.players[1].isCzar === true) {
-    game.players[1].isCzar = false;
-    game.players[2].isCzar = true;
-    game.players[2].isReady = false;
-  }
-  else if(game.players[2].isCzar === true) {
-    game.players[2].isCzar = false;
-    game.players[3].isCzar = true;
-    game.players[3].isReady = false;
-  }
-  else if(game.players[3].isCzar === true) {
-    game.players[3].isCzar = false;
-    game.players[0].isCzar = true;
-    game.players[0].isReady = false;
+  for( var i = 0; i < game.players.length; ++i ) {
+    if( game.players[i].isCzar == true ) {
+      game.players[i].isCzar = false;
+      
+      var nextCzar = (i + 1) % game.players.length;
+      game.players[nextCzar].isCzar = true;
+
+      break;
+    }
   }
     if(game.isOver){
         _.map(game.players, function(p) {
