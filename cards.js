@@ -116,6 +116,7 @@ function white() {
    "72 virgins",
    "8 oz. of sweet Mexican black-tar heroin",
    "A Bop It™",
+   "A gorgeous gallery of an Indian-American lesbian wedding",
    "A Gypsy curse",
    "A Super Soaker™ full of cat pee",
    "A bag of magic beans",
@@ -651,6 +652,7 @@ function white() {
    "YOU MUST CONSTRUCT ADDITIONAL PYLONS",
    "Yeast",
    "Zeus's sexual appetites",
+   "Darin Goldstein",
   ];
 }
 
